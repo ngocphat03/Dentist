@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ namespace Dentist
         public Action FinishFixAllTooth;
         private void Awake()
         {
-            foreach (var tooth in _listTooth)
+            foreach (Tooth tooth in _listTooth)
             {
                 tooth.finishFixTooth = CheckFinishAllTooth;
             }
@@ -23,7 +22,7 @@ namespace Dentist
 
             foreach (Tooth tooth in _listTooth)
             {
-                if (tooth.gameObject.activeInHierarchy && !tooth.FinishFix)
+                if(tooth.gameObject.activeInHierarchy && !tooth.FinishFix)
                 {
                     allToothsFixed = false;
                     break;
